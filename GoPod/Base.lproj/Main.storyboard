@@ -21,12 +21,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kH8-N3-5xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82" y="260"/>
+            <point key="canvasLocation" x="-924" y="480"/>
         </scene>
         <!--ProfileVC - Root View Controller-->
         <scene sceneID="dCT-Z9-mir">
             <objects>
-                <tableViewController id="Eej-Pc-gva" customClass="ProfileVC" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Eej-Pc-gva" customClass="ProfileVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="xaG-28-fr8" customClass="TouchUITableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5n-op-40G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="-45"/>
+            <point key="canvasLocation" x="834" y="59"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="lYQ-Ud-fi2">
@@ -169,13 +169,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECj-az-rLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304" y="-45"/>
+            <point key="canvasLocation" x="298" y="59"/>
         </scene>
         <!--Activity OptionsVC-->
         <scene sceneID="Msd-NR-I4v">
             <objects>
                 <tableViewController id="N8c-ob-Fw9" customClass="ActivityOptionsVC" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9uD-Kt-Lxe">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9uD-Kt-Lxe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -197,7 +197,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKP-kP-VTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="-770"/>
+            <point key="canvasLocation" x="834" y="-666"/>
         </scene>
         <!--Navigation Controller - Test-->
         <scene sceneID="vFo-Vj-jli">
@@ -213,7 +213,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eC-LU-mhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="-45"/>
+            <point key="canvasLocation" x="-236" y="59"/>
         </scene>
         <!--Table View Controller - Root View Controller-->
         <scene sceneID="mML-Xi-Y3I">
@@ -238,7 +238,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9a-mE-cJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304" y="667"/>
+            <point key="canvasLocation" x="298" y="887"/>
         </scene>
         <!--Navigation Controller - Devices-->
         <scene sceneID="Z0n-5g-awZ">
@@ -254,7 +254,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cp-H7-oYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="667"/>
+            <point key="canvasLocation" x="-236" y="887"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,8 +9,6 @@
 #import "CSVMaker.h"
 #import <sys/utsname.h>
 
-#define HRM_LOG @"hrm.csv"
-
 @interface CSVMaker ()
 
 @property (strong, nonatomic) NSDictionary *accDict;
@@ -26,22 +24,22 @@
     if( self )
     {
         self.bioDict = [[NSMutableDictionary alloc] initWithDictionary:
-                        @{ HEIGHT_KEY : @"", AGE_KEY : @"", WEIGHT_KEY : @"", GENDER_KEY : MALE, LOCATION_KEY : INDOOR }];
+                        @{ kHeight : @"", kAge : @"", kWeight : @"", kGender : kMale, kLocation : kIndoor }];
         
         self.activityDict = [[NSMutableDictionary alloc] initWithDictionary:
-                             @{ ACTIVITY_KEY : @"", PLACEMENT_KEY : @"", INIT_STEP_COUNT_KEY : @"" } ];
+                             @{ kActivityType : @"", kPlacement : @"", kInitStepCount : @"" } ];
         
         self.libDict = [[NSMutableDictionary alloc] initWithDictionary: @{ ACTIVITY_COUNT_KEY : @0,
-                                                                           SPEED_KEY : @0, STRIDE_KEY : @0,
-                                                                           STEP_COUNT : @0, DISTANCE_KEY : @0 }];
+                                                                           kSpeed : @0, kStride : @0,
+                                                                           kStepCount : @0, kDistance : @0 }];
         
         self.referenceDataDict = [[NSMutableDictionary alloc] initWithDictionary:
-                                  @{ DISTANCE_KEY : @0,
-                                     DURATION_KEY : @0,
-                                     FINAL_STEP_COUNT_KEY : @0,
-                                     STEP_RATE_KEY : @0,
-                                     AVG_SPEED_KEY : @0,
-                                     AVG_STRIDE_LENGTH_KEY : @0 }];
+                                  @{ kDistance : @0,
+                                     kDuration: @0,
+                                     kFinalSteps : @0,
+                                     kStepRate : @0,
+                                     kAvgSpeed : @0,
+                                     kAvgStride : @0 }];
     }
     
     return self;
@@ -66,7 +64,7 @@
     NSString *stringToWrite;
     for( id key in self.bioDict )
     {
-        if( [HEIGHT_KEY isEqualToString:key] )
+        if( [kHeight isEqualToString:key] )
         {
             NSString *height = [self.bioDict valueForKey:key];
             height = [height stringByReplacingOccurrencesOfString:@"'" withString:@"ft"];
@@ -82,7 +80,7 @@
     
     for( id key in self.activityDict )
     {
-        if( [INIT_STEP_COUNT_KEY isEqualToString:key] )
+        if( [kInitStepCount isEqualToString:key] )
         {
             initialStepCount = [[self.activityDict valueForKey:key] intValue];
             continue;
@@ -109,37 +107,37 @@
     
     [fileHandle writeData:[@"\nInfo From Reference Device\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    finalStepCount = [[self.referenceDataDict valueForKey:FINAL_STEP_COUNT_KEY] intValue];
+    finalStepCount = [[self.referenceDataDict valueForKey:kFinalSteps] intValue];
     totalStepCount = finalStepCount - initialStepCount;
 
     for( id key in self.referenceDataDict )
     {
-        if( [FINAL_STEP_COUNT_KEY isEqualToString:key] )
+        if( [kFinalSteps isEqualToString:key] )
         {
-            stringToWrite = [NSString stringWithFormat:@"%@,%d\n", STEP_COUNT, totalStepCount];
+            stringToWrite = [NSString stringWithFormat:@"%@,%d\n", kStepCount, totalStepCount];
         }
-        else if( [STEP_RATE_KEY isEqualToString:key] )
+        else if( [kStepRate isEqualToString:key] )
         {
             double stepsTaken = totalStepCount;
             double stepRate = stepsTaken / self.testTime;
             stringToWrite = [NSString stringWithFormat:@"%@,%.2f\n", key, stepRate];
         }
-        else if( [AVG_SPEED_KEY isEqualToString:key] )
+        else if( [kAvgSpeed isEqualToString:key] )
         {
             stringToWrite = [NSString stringWithFormat:@"%@ (m/s),%.2f\n", key,
-                             [[self.referenceDataDict valueForKey:AVG_SPEED_KEY] doubleValue]];
+                             [[self.referenceDataDict valueForKey:kAvgSpeed] doubleValue]];
         }
-        else if( [AVG_STRIDE_LENGTH_KEY isEqualToString:key] )
+        else if( [kAvgStride isEqualToString:key] )
         {
             stringToWrite = [NSString stringWithFormat:@"%@ (m),%.2f\n", key,
-                             [[self.referenceDataDict valueForKey:AVG_STRIDE_LENGTH_KEY] doubleValue]];
+                             [[self.referenceDataDict valueForKey:kAvgStride] doubleValue]];
         }
-        else if( [DISTANCE_KEY isEqualToString:key] )
+        else if( [kDistance isEqualToString:key] )
         {
             stringToWrite = [NSString stringWithFormat:@"%@ (m),%d\n", key,
-                             [[self.referenceDataDict valueForKey:DISTANCE_KEY] intValue]];
+                             [[self.referenceDataDict valueForKey:kDistance] intValue]];
         }
-        else if( [DURATION_KEY isEqualToString:key] )
+        else if( [kDuration isEqualToString:key] )
         {
             NSInteger ti = (NSInteger)self.testTime;
             NSInteger seconds = ti % 60;
@@ -213,9 +211,9 @@
 
 - (NSString *)generateFileName
 {
-    NSString *activity = [self.activityDict valueForKey:ACTIVITY_KEY];
+    NSString *activity = [self.activityDict valueForKey:kActivityType];
     
-    NSString *placement = [self.activityDict valueForKey:PLACEMENT_KEY];
+    NSString *placement = [self.activityDict valueForKey:kPlacement];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
@@ -231,8 +229,8 @@
 
 - (NSString *)averageString
 {
-    double speedAvg = [[self.libDict valueForKey:SPEED_KEY] doubleValue] / self.recordCount;
-    double strideAvg = [[self.libDict valueForKey:STRIDE_KEY] doubleValue] / self.recordCount;
+    double speedAvg = [[self.libDict valueForKey:kSpeed] doubleValue] / self.recordCount;
+    double strideAvg = [[self.libDict valueForKey:kStride] doubleValue] / self.recordCount;
     
     return [NSString stringWithFormat:@",,,,Average: %.2f,Average: %.2f\n", speedAvg, strideAvg];
 }
@@ -240,19 +238,19 @@
 - (NSString *)accuracyString
 {
     NSLog(@"CSV MAKER RECORD COUNT: %d", self.recordCount);
-    int totalStepCount = [[self.referenceDataDict valueForKey:FINAL_STEP_COUNT_KEY] intValue] -
-                         [[self.activityDict valueForKey:INIT_STEP_COUNT_KEY] intValue];
+    int totalStepCount = [[self.referenceDataDict valueForKey:kFinalSteps] intValue] -
+                         [[self.activityDict valueForKey:kInitStepCount] intValue];
     
     NSLog(@"context lib value: %f", [[self.libDict valueForKey:ACTIVITY_COUNT_KEY] doubleValue]);
     double contextAcc = ( [[self.libDict valueForKey:ACTIVITY_COUNT_KEY] doubleValue] / self.recordCount ) * 100;
     NSLog(@"Acc: %f", contextAcc);
-    double stepCountAcc = ( [[self.libDict valueForKey:STEP_COUNT] doubleValue] / totalStepCount ) * 100;
-    double speedAcc = ( ( [[self.libDict valueForKey:SPEED_KEY] doubleValue] / self.recordCount ) /
-                       [[self.referenceDataDict valueForKey:AVG_SPEED_KEY] doubleValue] ) * 100;
-    double strideAcc = ( ( [[self.libDict valueForKey:STRIDE_KEY] doubleValue] / self.recordCount ) /
-                        [[self.referenceDataDict valueForKey:AVG_STRIDE_LENGTH_KEY] doubleValue] ) * 100;
-    double distanceAcc = ( [[self.libDict valueForKey:DISTANCE_KEY] doubleValue] /
-                          [[self.referenceDataDict valueForKey:DISTANCE_KEY] doubleValue] ) * 100;
+    double stepCountAcc = ( [[self.libDict valueForKey:kStepCount] doubleValue] / totalStepCount ) * 100;
+    double speedAcc = ( ( [[self.libDict valueForKey:kSpeed] doubleValue] / self.recordCount ) /
+                       [[self.referenceDataDict valueForKey:kAvgSpeed] doubleValue] ) * 100;
+    double strideAcc = ( ( [[self.libDict valueForKey:kStride] doubleValue] / self.recordCount ) /
+                        [[self.referenceDataDict valueForKey:kAvgStride] doubleValue] ) * 100;
+    double distanceAcc = ( [[self.libDict valueForKey:kDistance] doubleValue] /
+                          [[self.referenceDataDict valueForKey:kDistance] doubleValue] ) * 100;
     
     if( speedAcc != speedAcc )
         speedAcc = 100;
@@ -271,11 +269,11 @@
     if( strideAcc == INFINITY )
         strideAcc = 0;
     
-    self.accDict = @{ CONTEXT_KEY : [NSNumber numberWithDouble:contextAcc],
-                      SPEED_KEY : [NSNumber numberWithDouble:speedAcc],
-                      STEP_COUNT : [NSNumber numberWithDouble:stepCountAcc],
-                      STRIDE_KEY : [NSNumber numberWithDouble:strideAcc],
-                      DISTANCE_KEY : [NSNumber numberWithDouble:distanceAcc] };
+    self.accDict = @{ kContext : [NSNumber numberWithDouble:contextAcc],
+                      kSpeed : [NSNumber numberWithDouble:speedAcc],
+                      kStepCount : [NSNumber numberWithDouble:stepCountAcc],
+                      kStride : [NSNumber numberWithDouble:strideAcc],
+                      kDistance : [NSNumber numberWithDouble:distanceAcc] };
     
     NSString *contextString = [NSString stringWithFormat:@"Accuracy: %.1f%%", contextAcc];
     NSString *stepCountString = [NSString stringWithFormat:@"Accuracy: %.1f%%", stepCountAcc];
@@ -289,15 +287,15 @@
 - (NSString *)resultsSummaryWithTitle:(NSString *)title
 {
     NSString *contextString = [NSString stringWithFormat:@"Context Accuracy: %.1f%%",
-                               [[self.accDict valueForKey:CONTEXT_KEY] doubleValue]];
+                               [[self.accDict valueForKey:kContext] doubleValue]];
     NSString *stepCountString = [NSString stringWithFormat:@"Step Count Accuracy: %.1f%%",
-                                 [[self.accDict valueForKey:STEP_COUNT] doubleValue]];
+                                 [[self.accDict valueForKey:kStepCount] doubleValue]];
     NSString *speedString = [NSString stringWithFormat:@"Speed Accuracy: %.1f%%",
-                             [[self.accDict valueForKey:SPEED_KEY] doubleValue]];
+                             [[self.accDict valueForKey:kSpeed] doubleValue]];
     NSString *strideString = [NSString stringWithFormat:@"Stride Length Accuracy: %.1f%%",
-                              [[self.accDict valueForKey:STRIDE_KEY] doubleValue]];
+                              [[self.accDict valueForKey:kStride] doubleValue]];
     NSString *distanceString = [NSString stringWithFormat:@"Distance Accuracy: %.1f%%",
-                                [[self.accDict valueForKey:DISTANCE_KEY] doubleValue]];
+                                [[self.accDict valueForKey:kDistance] doubleValue]];
     
     return [NSString stringWithFormat:@"%@\n%@\n%@\n%@\n%@\n%@", title, contextString, stepCountString, speedString, strideString, distanceString];
 }
@@ -315,17 +313,9 @@
 {
     NSArray *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-    NSString *filePath = [documentsDirectory[0] stringByAppendingPathComponent:HRM_LOG];
+    NSString *filePath = [documentsDirectory[0] stringByAppendingPathComponent:kHRMLog];
         
     [[NSFileManager defaultManager] createFileAtPath:filePath contents:[self.hrmData dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
-    
-    /*NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
-    
-    [fileHandle writeData:[@"Time,BPM\n" dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [fileHandle writeData:[self.hrmData dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    [fileHandle closeFile];*/
 }
 
 @end

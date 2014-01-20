@@ -7,10 +7,15 @@
 //
 
 #import "ActivityOptionsVC.h"
+#import "ProfileVC.h"
+
+static NSString* kActivities = @"Activities";
+static NSString* kDevPlace   = @"Device Placements";
 
 @interface ActivityOptionsVC ()
 
-@property (strong, nonatomic) NSIndexPath *selectedIndex;
+@property (strong, nonatomic) NSIndexPath *selectedActivity;
+@property (strong, nonatomic) NSIndexPath *selectedPlacement;
 
 @end
 
@@ -26,9 +31,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     if( self.dataType == kActivityType )
-        [self.tableView selectRowAtIndexPath:self.selectedIndex animated:NO scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView selectRowAtIndexPath:self.selectedActivity animated:NO scrollPosition:UITableViewScrollPositionNone];
     else if( self.dataType == kPlacement )
-        [self.tableView selectRowAtIndexPath:self.selectedIndex animated:NO scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView selectRowAtIndexPath:self.selectedPlacement animated:NO scrollPosition:UITableViewScrollPositionNone];
     
     self.revealViewController.delegate = self;
 }
@@ -53,9 +58,9 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if( self.dataType == kActivityType )
-        return @"Activities";
+        return kActivities;
     else
-        return @"Device Placements";
+        return kDevPlace;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +71,29 @@
     cell.textLabel.text = self.tableData[indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProfileVC *frontView = (ProfileVC *)self.revealViewController.frontViewController;
+    NSString *selectedValue = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text];
+    if( self.dataType == kActivityType )
+    {
+        [frontView.csvMaker.activityDict setValue:selectedValue forKey:kActivityType];
+        self.selectedActivity = indexPath;
+    }
+    else
+    {
+        [frontView.csvMaker.activityDict setValue:selectedValue forKey:kPlacement];
+        self.selectedPlacement = indexPath;
+    }
+    
+    [frontView.tableView reloadData];
+    
+    //[frontView setNextButtonStatus];
+    
+    [[self.revealViewController.frontViewController.view viewWithTag:1000] removeFromSuperview];
+    [self.revealViewController revealToggle:self];
 }
 
 - (void)frontViewTapped

@@ -64,14 +64,14 @@ static NSArray  *placements;
     UIImage *titleImage = [UIImage imageNamed:kNavLogo];
     self.revealViewController.navigationItem.titleView = [[UIImageView alloc] initWithImage:titleImage];
     
-    //self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-9, 0, 0, 0);
     
     self.firstSection = @[kHeight, kWeight, kAge, kGender];
     self.secondSection = @[kActivityType, kPlacement, kLocation, kInitStepCount];
     
     feetHeight = [feetHeights[2] intValue];
     inchHeight = [inchHeights[5] intValue];
-        
+    
     // Create toolbar for number pad.
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     [toolbar sizeToFit];
@@ -253,7 +253,7 @@ static NSArray  *placements;
     if( section == 0 )
         return kProfile;
     else
-        return kActivityOptions;
+        return kActivityOpt;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
