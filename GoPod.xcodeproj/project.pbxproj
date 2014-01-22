@@ -27,6 +27,22 @@
 		9468ADC2188D325E004C7010 /* Nav_Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9468ADC0188D325E004C7010 /* Nav_Logo@2x.png */; };
 		9468ADC5188D327D004C7010 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468ADC4188D327D004C7010 /* SWRevealViewController.m */; };
 		9468ADCB188D392F004C7010 /* ActivityOptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9468ADCA188D392F004C7010 /* ActivityOptionsVC.m */; };
+		947E923C188FB471006E3D3E /* PairedDevicesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 947E923B188FB471006E3D3E /* PairedDevicesVC.m */; };
+		947E923F188FB512006E3D3E /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 947E923E188FB512006E3D3E /* BLEDevice.m */; };
+		947E9242188FB538006E3D3E /* DeviceScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 947E9241188FB538006E3D3E /* DeviceScanVC.m */; };
+		947E9247188FB7D4006E3D3E /* hrm.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E9243188FB7D4006E3D3E /* hrm.png */; };
+		947E9248188FB7D4006E3D3E /* hrm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E9244188FB7D4006E3D3E /* hrm@2x.png */; };
+		947E9249188FB7D4006E3D3E /* sensorpod.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E9245188FB7D4006E3D3E /* sensorpod.png */; };
+		947E924A188FB7D4006E3D3E /* sensorpod@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E9246188FB7D4006E3D3E /* sensorpod@2x.png */; };
+		947E924D188FB890006E3D3E /* AppHealthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 947E924C188FB890006E3D3E /* AppHealthManager.m */; };
+		947E9252188FB8E4006E3D3E /* libHealth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 947E924F188FB8E4006E3D3E /* libHealth.a */; };
+		947E9254188FB909006E3D3E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947E9253188FB909006E3D3E /* CoreMotion.framework */; };
+		947E9256188FB90F006E3D3E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947E9255188FB90F006E3D3E /* CoreLocation.framework */; };
+		947E9258188FB914006E3D3E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947E9257188FB914006E3D3E /* CoreBluetooth.framework */; };
+		947E925F188FBA71006E3D3E /* Devices_Tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E925B188FBA71006E3D3E /* Devices_Tab.png */; };
+		947E9260188FBA71006E3D3E /* Devices_Tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E925C188FBA71006E3D3E /* Devices_Tab@2x.png */; };
+		947E9261188FBA71006E3D3E /* Test_Tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E925D188FBA71006E3D3E /* Test_Tab.png */; };
+		947E9262188FBA71006E3D3E /* Test_Tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 947E925E188FBA71006E3D3E /* Test_Tab@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +81,29 @@
 		9468ADC4188D327D004C7010 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9468ADC9188D392F004C7010 /* ActivityOptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOptionsVC.h; sourceTree = "<group>"; };
 		9468ADCA188D392F004C7010 /* ActivityOptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOptionsVC.m; sourceTree = "<group>"; };
+		947E923A188FB471006E3D3E /* PairedDevicesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PairedDevicesVC.h; sourceTree = "<group>"; };
+		947E923B188FB471006E3D3E /* PairedDevicesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PairedDevicesVC.m; sourceTree = "<group>"; };
+		947E923D188FB512006E3D3E /* BLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevice.h; sourceTree = "<group>"; };
+		947E923E188FB512006E3D3E /* BLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevice.m; sourceTree = "<group>"; };
+		947E9240188FB538006E3D3E /* DeviceScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceScanVC.h; sourceTree = "<group>"; };
+		947E9241188FB538006E3D3E /* DeviceScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceScanVC.m; sourceTree = "<group>"; };
+		947E9243188FB7D4006E3D3E /* hrm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hrm.png; sourceTree = "<group>"; };
+		947E9244188FB7D4006E3D3E /* hrm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hrm@2x.png"; sourceTree = "<group>"; };
+		947E9245188FB7D4006E3D3E /* sensorpod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensorpod.png; sourceTree = "<group>"; };
+		947E9246188FB7D4006E3D3E /* sensorpod@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sensorpod@2x.png"; sourceTree = "<group>"; };
+		947E924B188FB890006E3D3E /* AppHealthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHealthManager.h; sourceTree = "<group>"; };
+		947E924C188FB890006E3D3E /* AppHealthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHealthManager.m; sourceTree = "<group>"; };
+		947E924E188FB8E4006E3D3E /* HealthFitnessApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthFitnessApi.h; sourceTree = "<group>"; };
+		947E924F188FB8E4006E3D3E /* libHealth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHealth.a; sourceTree = "<group>"; };
+		947E9250188FB8E4006E3D3E /* MHealthLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHealthLogger.h; sourceTree = "<group>"; };
+		947E9251188FB8E4006E3D3E /* MHealthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHealthManager.h; sourceTree = "<group>"; };
+		947E9253188FB909006E3D3E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		947E9255188FB90F006E3D3E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		947E9257188FB914006E3D3E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		947E925B188FBA71006E3D3E /* Devices_Tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Devices_Tab.png; sourceTree = "<group>"; };
+		947E925C188FBA71006E3D3E /* Devices_Tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Devices_Tab@2x.png"; sourceTree = "<group>"; };
+		947E925D188FBA71006E3D3E /* Test_Tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Test_Tab.png; sourceTree = "<group>"; };
+		947E925E188FBA71006E3D3E /* Test_Tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Test_Tab@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +111,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				947E9258188FB914006E3D3E /* CoreBluetooth.framework in Frameworks */,
+				947E9256188FB90F006E3D3E /* CoreLocation.framework in Frameworks */,
+				947E9254188FB909006E3D3E /* CoreMotion.framework in Frameworks */,
 				9468AD53188CCEE2004C7010 /* CoreGraphics.framework in Frameworks */,
 				9468AD55188CCEE2004C7010 /* UIKit.framework in Frameworks */,
 				9468AD51188CCEE2004C7010 /* Foundation.framework in Frameworks */,
+				947E9252188FB8E4006E3D3E /* libHealth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +144,9 @@
 		9468AD4F188CCEE2004C7010 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				947E9257188FB914006E3D3E /* CoreBluetooth.framework */,
+				947E9255188FB90F006E3D3E /* CoreLocation.framework */,
+				947E9253188FB909006E3D3E /* CoreMotion.framework */,
 				9468AD50188CCEE2004C7010 /* Foundation.framework */,
 				9468AD52188CCEE2004C7010 /* CoreGraphics.framework */,
 				9468AD54188CCEE2004C7010 /* UIKit.framework */,
@@ -129,8 +175,16 @@
 				9468AD88188CD013004C7010 /* ProfileVC.m */,
 				9468ADC9188D392F004C7010 /* ActivityOptionsVC.h */,
 				9468ADCA188D392F004C7010 /* ActivityOptionsVC.m */,
+				947E923A188FB471006E3D3E /* PairedDevicesVC.h */,
+				947E923B188FB471006E3D3E /* PairedDevicesVC.m */,
+				947E9240188FB538006E3D3E /* DeviceScanVC.h */,
+				947E9241188FB538006E3D3E /* DeviceScanVC.m */,
+				947E924B188FB890006E3D3E /* AppHealthManager.h */,
+				947E924C188FB890006E3D3E /* AppHealthManager.m */,
 				9468AD8D188CD0A0004C7010 /* CSVMaker.h */,
 				9468AD8E188CD0A0004C7010 /* CSVMaker.m */,
+				947E923D188FB512006E3D3E /* BLEDevice.h */,
+				947E923E188FB512006E3D3E /* BLEDevice.m */,
 				9468AD5F188CCEE2004C7010 /* GoPodAppDelegate.h */,
 				9468AD60188CCEE2004C7010 /* GoPodAppDelegate.m */,
 				9468ADA7188CD70D004C7010 /* Custom Classes */,
@@ -180,6 +234,10 @@
 		9468ADA0188CD4FC004C7010 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				947E924E188FB8E4006E3D3E /* HealthFitnessApi.h */,
+				947E924F188FB8E4006E3D3E /* libHealth.a */,
+				947E9250188FB8E4006E3D3E /* MHealthLogger.h */,
+				947E9251188FB8E4006E3D3E /* MHealthManager.h */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -213,6 +271,14 @@
 		9468ADBE188D3245004C7010 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				947E925B188FBA71006E3D3E /* Devices_Tab.png */,
+				947E925C188FBA71006E3D3E /* Devices_Tab@2x.png */,
+				947E925D188FBA71006E3D3E /* Test_Tab.png */,
+				947E925E188FBA71006E3D3E /* Test_Tab@2x.png */,
+				947E9243188FB7D4006E3D3E /* hrm.png */,
+				947E9244188FB7D4006E3D3E /* hrm@2x.png */,
+				947E9245188FB7D4006E3D3E /* sensorpod.png */,
+				947E9246188FB7D4006E3D3E /* sensorpod@2x.png */,
 				9468ADBF188D325E004C7010 /* Nav_Logo.png */,
 				9468ADC0188D325E004C7010 /* Nav_Logo@2x.png */,
 			);
@@ -274,8 +340,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9468ADC1188D325E004C7010 /* Nav_Logo.png in Resources */,
+				947E9262188FBA71006E3D3E /* Test_Tab@2x.png in Resources */,
 				9468ADC2188D325E004C7010 /* Nav_Logo@2x.png in Resources */,
+				947E924A188FB7D4006E3D3E /* sensorpod@2x.png in Resources */,
+				947E9248188FB7D4006E3D3E /* hrm@2x.png in Resources */,
 				9468ADBD188CE71B004C7010 /* Main.storyboard in Resources */,
+				947E925F188FBA71006E3D3E /* Devices_Tab.png in Resources */,
+				947E9247188FB7D4006E3D3E /* hrm.png in Resources */,
+				947E9260188FBA71006E3D3E /* Devices_Tab@2x.png in Resources */,
+				947E9249188FB7D4006E3D3E /* sensorpod.png in Resources */,
+				947E9261188FBA71006E3D3E /* Test_Tab.png in Resources */,
 				9468AD69188CCEE2004C7010 /* Images.xcassets in Resources */,
 				9468AD9C188CD4C1004C7010 /* InfoPlist.strings in Resources */,
 			);
@@ -289,10 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9468AD61188CCEE2004C7010 /* GoPodAppDelegate.m in Sources */,
+				947E923F188FB512006E3D3E /* BLEDevice.m in Sources */,
 				9468ADB0188CD88E004C7010 /* BlueTableViewCell.m in Sources */,
+				947E923C188FB471006E3D3E /* PairedDevicesVC.m in Sources */,
 				9468ADB6188CDAE7004C7010 /* SegmentedControlCell.m in Sources */,
 				9468AD89188CD013004C7010 /* ProfileVC.m in Sources */,
 				9468ADCB188D392F004C7010 /* ActivityOptionsVC.m in Sources */,
+				947E9242188FB538006E3D3E /* DeviceScanVC.m in Sources */,
 				9468AD5D188CCEE2004C7010 /* main.m in Sources */,
 				9468ADAA188CD71A004C7010 /* TextFieldCell.m in Sources */,
 				9468ADAD188CD813004C7010 /* PickerViewCell.m in Sources */,
@@ -300,6 +377,7 @@
 				9468ADC5188D327D004C7010 /* SWRevealViewController.m in Sources */,
 				9468AD8C188CD04C004C7010 /* AppConstants.m in Sources */,
 				9468ADB3188CD917004C7010 /* TouchUITableView.m in Sources */,
+				947E924D188FB890006E3D3E /* AppHealthManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +483,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoPod/Other Sources/GoPod-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/GoPod/Resources/GoPod-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Ryan/Documents/Swipe/GoPod/GoPod/Libraries,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -418,6 +500,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoPod/Other Sources/GoPod-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/GoPod/Resources/GoPod-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Ryan/Documents/Swipe/GoPod/GoPod/Libraries,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

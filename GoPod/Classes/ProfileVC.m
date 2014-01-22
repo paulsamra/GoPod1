@@ -174,6 +174,7 @@ static NSArray  *placements;
     else if( cellID == segmentCellID )
     {
         SegmentedControlCell *segmentCell = (SegmentedControlCell *)cell;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         if( indexPath.section == 0 )
         {

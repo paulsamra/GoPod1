@@ -10,21 +10,27 @@
 
 @implementation BlueTableViewCell
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.textLabel.highlightedTextColor = [UIColor whiteColor];
+    self.detailTextLabel.highlightedTextColor = [UIColor whiteColor];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-    
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithRed:(61.0/255.0)
-                                                  green:(107.0/255.0)
-                                                   blue:(205.0/255.0)
-                                                  alpha:1.0];
-    self.selectedBackgroundView = bgColorView;
-    
-    self.textLabel.highlightedTextColor = [UIColor whiteColor];
-    self.detailTextLabel.highlightedTextColor = [UIColor whiteColor];
+    if( selected )
+    {
+        UIView *bgColorView = [[UIView alloc] init];
+        bgColorView.backgroundColor = [UIColor colorWithRed:(61.0/255.0)
+                                                      green:(107.0/255.0)
+                                                       blue:(205.0/255.0)
+                                                      alpha:1.0];
+        self.selectedBackgroundView = bgColorView;
+    }
 }
 
 @end

@@ -7,12 +7,26 @@
 //
 
 #import "GoPodAppDelegate.h"
+#import "AppHealthManager.h"
 
 @implementation GoPodAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [AppHealthManager sharedManager];
+    
+    UIColor *blue = [UIColor colorWithRed:0.17f green:0.35f blue:0.78f alpha:1.0f];
+    [[UINavigationBar appearance] setTintColor:blue];
+    [[UIBarButtonItem appearance] setTintColor:blue];
+    
+    UITextField *lagFreeField = [[UITextField alloc] init];
+    [self.window addSubview:lagFreeField];
+    [lagFreeField becomeFirstResponder];
+    [lagFreeField resignFirstResponder];
+    [lagFreeField removeFromSuperview];
+    
     return YES;
 }
 							

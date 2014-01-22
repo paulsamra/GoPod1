@@ -203,7 +203,7 @@
         <scene sceneID="vFo-Vj-jli">
             <objects>
                 <navigationController definesPresentationContext="YES" id="uGb-o3-XY2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Test" id="Wsh-ty-Dak"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="Test_Tab.png" id="Wsh-ty-Dak"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pMv-F7-nnP">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -215,36 +215,118 @@
             </objects>
             <point key="canvasLocation" x="-236" y="59"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Paired DevicesVC - Root View Controller-->
         <scene sceneID="mML-Xi-Y3I">
             <objects>
-                <tableViewController id="85g-y3-yx6" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HrN-54-yvZ">
+                <tableViewController id="85g-y3-yx6" customClass="PairedDevicesVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HrN-54-yvZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ZAN-Yh-mhl">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pairCell" textLabel="IJ3-Ex-yCo" style="IBUITableViewCellStyleDefault" id="ZAN-Yh-mhl" customClass="BlueTableViewCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZAN-Yh-mhl" id="InR-Ba-znV">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IJ3-Ex-yCo">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="deviceCell" textLabel="G1V-mc-Hmv" detailTextLabel="QOv-QX-FrD" style="IBUITableViewCellStyleSubtitle" id="99P-A6-5h8">
+                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99P-A6-5h8" id="Buk-UV-7wN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G1V-mc-Hmv">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QOv-QX-FrD">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="M9T-R8-sLP"/>
+                    <connections>
+                        <segue destination="nLN-nv-UY7" kind="push" identifier="scanSP" id="Uli-ZB-8mX"/>
+                        <segue destination="nLN-nv-UY7" kind="push" identifier="scanHRM" id="gYe-2J-hMp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9a-mE-cJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="298" y="887"/>
         </scene>
+        <!--Device ScanVC-->
+        <scene sceneID="Pdr-4x-E2H">
+            <objects>
+                <tableViewController id="nLN-nv-UY7" customClass="DeviceScanVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="v4n-nz-pij">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="yPU-aA-m7y" detailTextLabel="f7H-Fl-G0D" style="IBUITableViewCellStyleSubtitle" id="nu0-kx-xHq" customClass="BlueTableViewCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nu0-kx-xHq" id="o18-ZP-sBc">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yPU-aA-m7y">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f7H-Fl-G0D">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nLN-nv-UY7" id="Igo-Ci-YX3"/>
+                            <outlet property="delegate" destination="nLN-nv-UY7" id="D5K-R5-SPd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="TKR-AQ-fLc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iR-00-UxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="834" y="887"/>
+        </scene>
         <!--Navigation Controller - Devices-->
         <scene sceneID="Z0n-5g-awZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="gV9-bX-FA9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Devices" id="0rQ-8I-17K"/>
+                    <tabBarItem key="tabBarItem" title="Devices" image="Devices_Tab.png" id="0rQ-8I-17K"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8nb-qS-PsH">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -257,9 +339,16 @@
             <point key="canvasLocation" x="-236" y="887"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Devices_Tab.png" width="27" height="27"/>
+        <image name="Test_Tab.png" width="25" height="23"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="gYe-2J-hMp"/>
+    </inferredMetricsTieBreakers>
 </document>

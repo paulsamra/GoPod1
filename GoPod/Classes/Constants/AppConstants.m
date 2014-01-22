@@ -6,6 +6,17 @@
 //  Copyright (c) 2014 Swipe. All rights reserved.
 //
 
+// BLE device types
+NSString* const kSensorPod      = @"SensorPod";
+NSString* const kHRM            = @"Heart Rate Monitor";
+NSString* const kUnknownDevice  = @"Unknown";
+
+// BLE connection states
+NSString* const kConnected      = @"Connected";
+NSString* const kDisconnected   = @"Disconnected";
+NSString* const kConnecting     = @"Connecting...";
+NSString* const kDisconnecting  = @"Disconnecting...";
+
 // Profile options
 NSString* const kProfile        = @"Profile";
 NSString* const kHeight         = @"Height";
@@ -38,8 +49,13 @@ NSString* const kAvgSpeed       = @"Avg Speed";
 NSString* const kAvgStride      = @"Avg Stride Length";
 NSString* const kStepRate       = @"Avg Step Rate";
 
+// NSNotificationCenter keys
+NSString* const kScanDone       = @"Scan Done";
+
 // Filenames
 NSString* const kHRMLog         = @"hrm.csv";
 
 // Image filenames
 NSString* const kNavLogo        = @"Nav_Logo";
+NSString* const kSPicon         = @"sensorpod";
+NSString* const kHRMicon        = @"hrm";

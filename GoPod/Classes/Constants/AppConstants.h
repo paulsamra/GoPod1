@@ -6,6 +6,17 @@
 //  Copyright (c) 2014 Swipe. All rights reserved.
 //
 
+// BLE device types
+extern NSString* const kSensorPod;
+extern NSString* const kHRM;
+extern NSString* const kUnknownDevice;
+
+// BLE connection states
+extern NSString* const kConnected;
+extern NSString* const kDisconnected;
+extern NSString* const kConnecting;
+extern NSString* const kDisconnecting;
+
 // Profile options
 extern NSString* const kProfile;
 extern NSString* const kHeight;
@@ -38,8 +49,13 @@ extern NSString* const kAvgSpeed;
 extern NSString* const kAvgStride;
 extern NSString* const kStepRate;
 
+// NSNotificationCenter keys
+extern NSString* const kScanDone;
+
 // Filenames
 extern NSString* const kHRMLog;
 
 // Image filenames
 extern NSString* const kNavLogo;
+extern NSString* const kSPicon;
+extern NSString* const kHRMicon;

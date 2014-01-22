@@ -52,7 +52,7 @@ static NSString* kDevPlace   = @"Device Placements";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return self.revealViewController.navigationController.navigationBar.frame.size.height + 40;
+    return self.revealViewController.navigationController.navigationBar.frame.size.height + 46;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -90,8 +90,6 @@ static NSString* kDevPlace   = @"Device Placements";
     
     [frontView.tableView reloadData];
     
-    //[frontView setNextButtonStatus];
-    
     [[self.revealViewController.frontViewController.view viewWithTag:1000] removeFromSuperview];
     [self.revealViewController revealToggle:self];
 }
@@ -104,7 +102,8 @@ static NSString* kDevPlace   = @"Device Placements";
 
 - (void)revealController:(SWRevealViewController *)revealController didMoveToPosition:(FrontViewPosition)position
 {
-    if ( position == 2 ) {
+    if ( position == 2 )
+    {
         UIView *lockingView = [[UIView alloc] initWithFrame:revealController.frontViewController.view.frame];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(frontViewTapped)];
         [lockingView addGestureRecognizer:tap];
